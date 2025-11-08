@@ -5,7 +5,7 @@ print("Category is farm animals.")
 secret_word = "Cow" 
 
 
-guessing_letters = []
+guessed_letters = []
 tries = 6
 
 while tries > 0:
@@ -27,6 +27,13 @@ while tries > 0:
 
     if guess not in secret_word:
         tries -= 1
+        if tries == 1:
+            print("Hint: Most common colors of this animal are black and white.")
+        if tries == 2:
+            print("Hint: This animal has four stomachs.")
+        if tries == 3:
+            print(" Hint: Think of an animal you can milk.")
+
         print("Wrong! You have", tries, "tries left.")
 
     if all(letter in guessed_letters for letter in secret_word):
